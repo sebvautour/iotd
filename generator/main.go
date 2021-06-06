@@ -20,6 +20,11 @@ import (
 	extractor "github.com/marekm4/color-extractor"
 )
 
+type Data struct {
+	Title string
+	URLs  []ImageMeta
+}
+
 type ImageMeta struct {
 	URL               string
 	URLHash           string
@@ -56,7 +61,7 @@ func main() {
 
 	j := json.NewEncoder(os.Stdout)
 	j.SetIndent("", " ")
-	err = j.Encode(images)
+	err = j.Encode(Data{Title: "Memes", URLs: images})
 	if err != nil {
 		log.Fatalf("Failed write JSON output: %v", err)
 	}

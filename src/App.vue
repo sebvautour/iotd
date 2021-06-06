@@ -1,20 +1,39 @@
 <template>
   <div class="bg-primary wrapper">
-  <p><img class="main-img" :src="image"></p>
-  <button class="bg-secondary" @click="selectedDataset++">Next</button>
+    <h1>{{title}}</h1>
+  <p><v-img :src="image" class="main-img" transition="false"></v-img></p>
+  <v-btn class="bg-secondary mt-2" size="x-large" @click="random()">{{buttonText}}</v-btn>
 </div>
 </template>
 
 <script>
 
+import dataset from './assets/data.json'
 export default {
   name: 'App',
   data() {
     return {
-    dataset: [],
-    selectedDataset: 0
+    title: dataset.title,
+    dataset: dataset.urls,
+    selectedDataset: 0,
+    left: []
     }
 
+  },
+  mounted() {
+    this.random();
+  },
+  methods: {
+    random() {
+      if (this.left.length === 0) {
+        for (let i = 0; i < this.dataset.length; i++) {
+          this.left.push(i);
+        }
+      }
+      let li = Math.floor(Math.random() * this.left.length);
+      this.selectedDataset = this.left[li];
+      this.left.splice(li,1);
+    }
   },
   components: {
   },
@@ -27,6 +46,12 @@ export default {
     },
     secondaryColor() {
       return this.dataset[this.selectedDataset].SecondaryColorHex
+    },
+    buttonText() {
+      if (this.left.length === 0) {
+        return "Start Over"
+      }
+      return "Another!"
     }
   }
 }
@@ -41,16 +66,17 @@ html,body,.wrapper {
 
 .main-img {
   height: 500px;
+  max-height: 100%;
 }
 
 .bg-primary {
-  color: v-bind('secondaryColor');
-  background-color:  v-bind('primaryColor');
+  color: v-bind('secondaryColor') !important;
+  background-color:  v-bind('primaryColor') !important;
 }
 
 .bg-secondary {
-  background-color:  v-bind('secondaryColor');
-  color: v-bind('primaryColor');
+  background-color:  v-bind('secondaryColor')  !important;
+  color: v-bind('primaryColor') !important;
 }
 
 
