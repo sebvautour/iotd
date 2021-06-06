@@ -13,8 +13,8 @@ export default {
   name: 'App',
   data() {
     return {
-    title: dataset.title,
-    dataset: dataset.urls,
+    title: dataset.Title,
+    dataset: dataset.URLs,
     selectedDataset: 0,
     left: []
     }

@@ -7,8 +7,8 @@ The app currently relies on a `src/assets/data.json` for the data that needs to 
 
 ```json
 {
-    "title": "Memes",
-    "urls":[
+    "Title": "Memes",
+    "URLs":[
         {
          "URL": "https://picsum.photos/200/300",
          "URLHash": "e4f4a50ad707f41b6aad188699ede8dd",
