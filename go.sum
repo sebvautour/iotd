@@ -1,0 +1,4 @@
+github.com/go-playground/colors v1.2.0 h1:0EdjTXKrr2g1L/LQTYtIqabeHpZuGZz1U4osS1T8+5M=
+github.com/go-playground/colors v1.2.0/go.mod h1:miw1R2JIE19cclPxsXqNdzLZsk4DP4iF+m88bRc7kfM=
+github.com/marekm4/color-extractor v1.2.0 h1:DCU/FXg3PlAwig7W5PRZshiX5x38k0aNPTxYZ6/fZb0=
+github.com/marekm4/color-extractor v1.2.0/go.mod h1:90VjmiHI6M8ez9eYUaXLdcKnS+BAOp7w+NpwBdkJmpA=

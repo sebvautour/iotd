@@ -1,4 +1,6 @@
-# iotd
+# Image of the Day
+
+Simple test app to display daily images
 
 ## Project setup
 ```
