@@ -1,9 +1,10 @@
 <template>
-  <div class="bg-primary wrapper">
+<v-app>
+  <div class="wrapper" :style="'background-color: '+primaryColor+' !important; color: '+secondaryColor+';'">
     <h1>{{title}}</h1>
   <p><v-img :src="image" class="main-img" transition="false"></v-img></p>
-  <v-btn class="bg-secondary mt-2" size="x-large" @click="random()">{{buttonText}}</v-btn>
-</div>
+  <v-btn class="mt-2" size="x-large" @click="random()" :style="'background-color: '+secondaryColor+' !important; color: '+primaryColor+';'">{{buttonText}}</v-btn>
+</div></v-app>
 </template>
 
 <script>
@@ -68,17 +69,6 @@ html,body,.wrapper {
   height: 500px;
   max-height: 100%;
 }
-
-.bg-primary {
-  color: v-bind('secondaryColor') !important;
-  background-color:  v-bind('primaryColor') !important;
-}
-
-.bg-secondary {
-  background-color:  v-bind('secondaryColor')  !important;
-  color: v-bind('primaryColor') !important;
-}
-
 
 .wrapper {
   position: absolute;
